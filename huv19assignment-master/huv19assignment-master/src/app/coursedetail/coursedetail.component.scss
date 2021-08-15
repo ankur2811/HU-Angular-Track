@@ -1,0 +1,39 @@
+#header{
+  background-color: black;
+  color: honeydew;
+  max-width: 100%;
+  #course-header{
+    margin-left: 125px;
+    #button{
+      display:flex;
+      justify-content: space-around;
+      max-width: 200px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.detail{
+  margin-left: 125px;
+  background-color: palegoldenrod;
+  max-width: 600px;
+}
+
+.course-video{
+  background-color: pink;
+  max-width: 420px;
+  min-width: 420px;
+  max-height: 500px;
+  min-height: 300px;
+  margin-left: 730px;
+  margin-top:-320px;
+  .vid{
+    width:100%;
+
+  }
+  .vid-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}

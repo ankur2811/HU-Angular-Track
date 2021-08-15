@@ -1,0 +1,45 @@
+<app-banner [text]="rootName"></app-banner>
+<p id="ttl">{{this.swService.cart.length}} Courses In  Cart</p>
+<div id="page">
+  <div>
+<div *ngFor="let char of cart">
+  <div class="l-detail">
+    <div class="left-detail">
+
+      <img class="img-1" src="../../assets/Rectangle 36.svg" >
+
+      <div class="left-subdetail">
+          <strong>{{char.title}}</strong>
+          <div id="left-subbutton">
+
+            <p >{{char.courseCreator}}</p>
+          </div>
+      </div>
+
+      <button class="wish" id="left-btn-1" type="button" (click)="OnAddWishList(char.title,char.price,char.tags,char.courseCreator,char.discount)">Add To WishList</button>
+      <strong id="final-price" >Rs {{char.price}}/-</strong>
+
+     <button class="de" id="left-btn-1" type="button" (click)="OnDeleteCart(char.title,char.price,char.discount)">Delete from cart</button>
+
+
+
+  </div>
+
+</div>
+</div>
+</div>
+<div id="check">
+  <p>Total Amount</p>
+  <h1>Rs {{swService.value}}</h1>
+  <p>You have saved Rs {{swService.discount}}</p>
+  <button class="abc" *ngIf="swService.value!==0" (click)="Oncheckout()">Checkout</button>
+</div>
+</div>
+
+
+<div id="popup"  *ngIf="showPop">
+  <img id="close" class="closebtn" src="https://img.icons8.com/metro/26/000000/cancel.png" (click)="oncross()">
+  <br>
+  <br>
+  <p>Your Order Has Been Placed Successfully</p>
+</div>

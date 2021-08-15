@@ -1,0 +1,41 @@
+
+<app-banner [text]="rootName"></app-banner>
+<br>
+<br>
+<div id="start">
+<div class="abc">
+<div *ngFor="let char of wishlist">
+<div class="l-detail">
+  <div class="left-detail">
+
+    <img class="img-1" src="../../assets/Rectangle 36.svg" >
+
+    <div class="left-subdetail">
+        <strong>{{char.title}}</strong>
+        <div id="left-subbutton">
+            <button class="left-btn" type="button">{{char.tags}}</button>
+
+        </div>
+    </div>
+    <p id="author">{{char.courseCreator}}</p>
+
+    <strong id="final-price" >Rs {{char.price}}/-</strong>
+   <div class="sub-inner"> <del class="dis" style="padding:30px;">Rs {{char.discount}}-</del></div>
+   <button class="addcrt" id="left-btn-1" type="button" (click)="OnAddCart(char.title,char.price,char.discount,char.courseCreator)">Add To Cart </button>
+   <img class="ig"src="https://img.icons8.com/material-rounded/24/000000/filled-trash.png" (click)="onDelete(char.title)">
+   <img  class="img-3" src="../../assets/Path 20-1.svg" height=30px>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+
+
+<div id="crt">
+  <app-cartdetails></app-cartdetails>
+</div>
+</div>
+

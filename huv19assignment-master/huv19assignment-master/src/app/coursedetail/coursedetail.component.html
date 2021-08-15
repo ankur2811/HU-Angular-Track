@@ -1,0 +1,40 @@
+<app-banner [text]="rootName"></app-banner>
+<div id="header">
+<div id="course-header">
+  <h3>{{description.title}}</h3>
+  <p>{{description.courseDescription}}</p>
+  <br>
+  <p>{{description.courseCreator}}</p>
+  <div id="button">
+    <button class="btn-primary">{{description.tags[0]}}</button>
+    <button class="btn-primary">{{description.tags[0]}}</button>
+    <button class="btn-primary">{{description.tags[0]}}</button>
+  </div>
+</div>
+</div>
+<div class="detail">
+  <h3>Course Details</h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolores enim explicabo, excepturi ut, pariatur veniam suscipit nulla exercitationem soluta labore numquam unde voluptatem optio hic natus illum! Quod, tenetur?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolores enim explicabo, excepturi ut, pariatur veniam suscipit nulla exercitationem soluta labore numquam unde voluptatem optio hic natus illum! Quod, tenetur?</p>
+
+</div>
+
+
+<div class="course-video">
+ <div class="video">
+  <video controls class="vid">
+    <source src="https://www.youtube.com/watch?v=kuJNVKHHpGk" type="video/mp4">
+
+  Your browser does not support the video tag.
+  </video>
+ </div>
+<strong>{{description.price}}</strong>
+<p>{{description.discount}}</p>
+<p>8 hrs left for this price</p>
+<div class="vid-btn">
+  <button class="btn-primary" (click)="OnAddCart(description.title,description.price,description.courseCreator,description.discount)">Add To Cart</button>
+  <button class="btn-primary"  (click)="OnAddWishList(description.title,description.price,description.tags[0],description.courseCreator,description.discount)">Add To WishList</button>
+</div>
+
+</div>
+

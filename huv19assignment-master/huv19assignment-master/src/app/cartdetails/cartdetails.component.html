@@ -1,0 +1,14 @@
+
+<div id="cart">
+  <h3>Your Cart Details</h3>
+<hr>
+<div *ngFor="let char of cart">
+  <p>{{char.title}}</p>
+  <p>{{char.price}}</p>
+
+</div>
+<p >Total cart Value :{{swService.value}}</p>
+  <li routerLinkActive="active"><a routerLink="/cart"><button class="btn" *ngIf="swService.value!==0">Go to checkout</button></a></li>
+</div>
+
+

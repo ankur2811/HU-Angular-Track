@@ -1,0 +1,47 @@
+<app-banner [text]="rootName"></app-banner>
+<app-breadcrumb></app-breadcrumb>
+<div *ngFor="let char of courses">
+  <div class="l-detail">
+    <div class="left-detail">
+
+      <img class="img-1" src="../../assets/Rectangle 36.svg" >
+
+      <div class="left-subdetail">
+          <strong>{{char.title}}</strong>
+          <div id="left-subbutton">
+              <button class="left-btn" type="button">{{char.tags[0]}}</button>
+
+          </div>
+      </div>
+      <p id="author">{{char.courseCreator}}</p>
+
+      <strong id="final-price" >Rs {{char.price}}/-</strong>
+     <div class="sub-inner"> <del class="dis" style="padding:30px;">{{char.discount}}%dis</del></div>
+    <div class="add"> <button class="add" id="left-btn-1" type="button" (click)="OnAddCart(char.title,char.price,char.courseCreator,char.discount)">Add To Cart</button></div>
+     <button class="del" id="left-btn-1" type="button" (click)="OnAddWishList(char.title,char.price,char.tags[0],char.courseCreator,char.discount)">Add To WishList</button>
+
+     <li routerLinkActive="active" ><a routerLink="/detail" (click)="OnDesc(char.id)"><img  class="img-3" src="../../assets/Path 20-1.svg" height=30px></a></li>
+  </div>
+
+</div>
+</div>
+
+
+
+<app-cartdetails></app-cartdetails>
+
+
+<div id="popup"  *ngIf="showPop">
+  <img id="close" class="closebtn" src="https://img.icons8.com/metro/26/000000/cancel.png" (click)="oncross()">
+  <br>
+  <br>
+  <p>Course Is successfully added to the cart</p>
+</div>
+
+<div id="popup"  *ngIf="showPop1">
+  <img id="close" class="closebtn" src="https://img.icons8.com/metro/26/000000/cancel.png" (click)="oncross()">
+  <br>
+  <br>
+  <p>Course Is Already Present In the cart</p>
+</div>
+

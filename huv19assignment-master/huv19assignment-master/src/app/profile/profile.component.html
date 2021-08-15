@@ -1,0 +1,129 @@
+<app-banner [text]="rootName"></app-banner>
+<br>
+<form [formGroup]="profileForm" (ngSubmit)="onSaveProject()" id="lower" >
+
+  <div class="form-group" id="profile-image-1">
+    <input type="image" id="profile-img" src="../../assets/profile.jpg">
+  </div>
+<div id="profile-detail" class="form-group">
+<div id="name">
+  <div class="form-group" id="display">
+    <label for="name">Display Name</label>
+    <input
+    type="text"
+
+    formControlName='display'
+    id="display-name" placeholder="Add Placeholder text"
+    class="form-control">
+  </div>
+  <div class="form-group" id="first">
+    <label for="name">First Name</label>
+    <input
+    type="text"
+    formControlName='first'
+    id="first-name" placeholder="Add Placeholder text"
+    class="form-control">
+  </div>
+  <div class="form-group" id="last">
+    <label for="text">Last Name</label>
+    <input
+    type="test"
+    formControlName='last'
+    id="last-name" placeholder="Add Placeholder text"
+    class="form-control">
+  </div>
+</div>
+<div class="form-group" id="About">
+  <label for="text">About Yourself</label>
+  <input
+  type="test"
+  formControlName='about'
+  id="about-text"
+  class="form-control">
+</div>
+
+
+<div class="form-group" id="area-of-interest">
+  <p>Your Area Of Interest</p>
+  <div id="checkbox" *ngFor="let item of interest;">
+      <label class="container">{{item.displayValue}}
+          <input type="checkbox" >
+          <span class="checkmark"></span>
+        </label>
+
+  </div>
+</div>
+
+<div id="radio" class="form-group">
+  <p>Are You A Student Or Professional</p>
+  <input type="radio"  name="" class="form-check-input">
+  <label class="container-radio">Student
+
+      <span class="checkmark-radio"></span>
+    </label>
+
+    <input type="radio" id="checkradio"
+
+    (change)="radioButtonChanged()"
+
+    >
+    <label class="container-radio">Professional
+
+      <span class="checkmark-radio"></span>
+    </label>
+
+</div>
+
+<div id="radio-1" *ngIf="showDiv">
+  <div>
+  <p>How much of experience you have?</p>
+  <div *ngFor="let item of experience">
+  <input type="radio"  name="radio">
+  <label class="container-radio">{{item.displayValue}}
+
+      <span class="checkmark-radio"></span>
+    </label>
+
+  </div>
+</div>
+    <p>What is your expertise?</p>
+    <div *ngFor="let item of expertise">
+      <input type="radio"  name="radio">
+      <label class="container-radio">{{item.displayValue}}
+
+          <span class="checkmark-radio"></span>
+        </label>
+
+      </div>
+
+    <p>Mention Your Role</p>
+    <input type="text" id="expertise">
+</div>
+
+
+
+
+
+
+
+<button id="btn" class="btn btn-primary" type="submit" (click)="popup()" [disabled]="!profileForm.valid">Create Profile</button>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</form>
+
+<div id="popup"  *ngIf="showPop">
+  <img id="close" class="closebtn" src="https://img.icons8.com/metro/26/000000/cancel.png" (click)="oncross()">
+  <br>
+  <br>
+  <p>Your Profile is Saved</p>
+</div>
